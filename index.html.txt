@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Unbreakable Ju — Mindful Glasscraft Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sand-50: #FAF8F5;
+      --sand-100: #F3EFE9;
+      --sand-200: #E7E0D5;
+      --charcoal-900: #161514;
+      --charcoal-700: #383531;
+      --charcoal-500: #6B665F;
+      --charcoal-400: #948F86;
+      --amber-flame: #E05A2B;
+      --amber-glow: rgba(224, 90, 43, 0.18);
+      --amber-subtle: #FFF2EB;
+      --surface-white: #FFFFFF;
+      --border-subtle: rgba(22, 21, 20, 0.08);
+      --border-strong: rgba(22, 21, 20, 0.14);
+      --font-display: 'Italiana', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --shadow-sm: 0 2px 8px rgba(22, 21, 20, 0.04);
+      --shadow-md: 0 12px 30px rgba(22, 21, 20, 0.06);
+      --shadow-lg: 0 20px 45px rgba(22, 21, 20, 0.09);
+      --shadow-glow: 0 16px 36px var(--amber-glow);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-full: 999px;
+      --transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--sand-50);
+      color: var(--charcoal-900);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 90px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .top-notice {
+      background: var(--charcoal-900);
+      color: var(--sand-100);
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 9px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+    .top-notice span { color: #FF9E44; font-weight: 600; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 0;
+      transition: var(--transition);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .brand-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 4px 10px rgba(224, 90, 43, 0.28));
+      transition: var(--transition);
+    }
+    .brand-group:hover .brand-mark {
+      transform: translateY(-1px) rotate(-2deg);
+      filter: drop-shadow(0 6px 14px rgba(224, 90, 43, 0.4));
+    }
+    .brand-mark svg { width: 100%; height: 100%; }
+
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      letter-spacing: 0.06em;
+      color: var(--charcoal-900);
+      line-height: 1;
+    }
+    .brand-tag {
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--amber-flame);
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--charcoal-700);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: var(--transition);
+    }
+    .nav-menu a:hover { color: var(--amber-flame); }
+    .nav-cta {
+      background: var(--charcoal-900);
+      color: #FFF !important;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.84rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-cta:hover {
+      background: var(--amber-flame);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .hero {
+      padding: 85px 0 65px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 55px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-glow-fx {
+      position: absolute;
+      top: -100px;
+      right: 15%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.12) 0%, rgba(250, 248, 245, 0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber-subtle);
+      border: 1px solid rgba(224, 90, 43, 0.25);
+      color: var(--amber-flame);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 4.4rem;
+      line-height: 1.05;
+      font-weight: 400;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      color: var(--charcoal-500);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 34px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--charcoal-900);
+      color: #fff;
+      padding: 15px 32px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover {
+      background: var(--amber-flame);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-ghost {
+      color: var(--charcoal-700);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      padding: 10px 14px;
+    }
+    .btn-ghost:hover { color: var(--amber-flame); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .stat-item span:first-child {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--charcoal-900);
+    }
+    .stat-item span:last-child {
+      font-size: 0.78rem;
+      color: var(--charcoal-400);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-visual-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .blob-frame {
+      width: 100%;
+      max-width: 440px;
+      height: 480px;
+      border-radius: 46% 54% 60% 40% / 42% 48% 52% 58%;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 5px solid #FFFFFF;
+      background: #EAE6DF;
+      transition: var(--transition);
+    }
+    .blob-frame:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-glow);
+    }
+    .blob-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-section {
+      padding: 95px 0;
+      background: var(--sand-100);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .story-content span.eyebrow {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--amber-flame);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .story-content h2 {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+
+    .story-content p {
+      color: var(--charcoal-500);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .story-quote {
+      border-left: 2px solid var(--amber-flame);
+      padding-left: 20px;
+      margin: 24px 0 28px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      line-height: 1.4;
+      color: var(--charcoal-900);
+    }
+
+    .story-signature {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--charcoal-900);
+    }
+
+    .disciplines { padding: 100px 0 60px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+    .section-title span {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--amber-flame);
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .section-title h3 {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .disciplines-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .discipline-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .discipline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
+    }
+
+    .discipline-thumb {
+      height: 250px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+      background: var(--sand-200);
+    }
+    .discipline-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .discipline-card:hover .discipline-thumb img {
+      transform: scale(1.05);
+    }
+
+    .discipline-card .tag {
+      color: var(--amber-flame);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .discipline-card h4 {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    .discipline-card p {
+      color: var(--charcoal-500);
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .workshops { padding: 40px 0 100px; }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .workshop-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+    }
+    .workshop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .workshop-card.featured {
+      border: 1.5px solid var(--amber-flame);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--amber-flame);
+      color: #fff;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      z-index: 2;
+    }
+
+    .card-thumb {
+      height: 180px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: var(--sand-200);
+    }
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .workshop-card:hover .card-thumb img {
+      transform: scale(1.04);
+    }
+
+    .workshop-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .price-wrap {
+      margin-bottom: 12px;
+    }
+    .workshop-card .price {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      letter-spacing: -0.02em;
+    }
+    .workshop-card .meta {
+      font-size: 0.78rem;
+      color: var(--charcoal-400);
+      font-weight: 500;
+      margin-top: -2px;
+    }
+
+    .workshop-card ul {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--charcoal-500);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 14px;
+      margin-bottom: 22px;
+    }
+    .workshop-card ul li {
+      margin-bottom: 8px;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.45;
+    }
+    .workshop-card ul li::before {
+      content: "•";
+      color: var(--amber-flame);
+      font-size: 1.1rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .btn-card {
+      display: block;
+      text-align: center;
+      background: var(--sand-50);
+      color: var(--charcoal-900);
+      border: 1px solid var(--border-strong);
+      padding: 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-card:hover {
+      background: var(--charcoal-900);
+      color: #fff;
+      border-color: var(--charcoal-900);
+    }
+    .workshop-card.featured .btn-card {
+      background: var(--amber-flame);
+      color: #fff;
+      border-color: var(--amber-flame);
+    }
+    .workshop-card.featured .btn-card:hover {
+      background: var(--charcoal-900);
+      border-color: var(--charcoal-900);
+    }
+
+    .gallery-section {
+      padding: 70px 0 80px;
+      background: var(--sand-100);
+      border-radius: var(--radius-lg);
+      margin: 30px 0 60px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 0 32px;
+    }
+
+    .gallery-item {
+      background: var(--surface-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .gallery-photo {
+      height: 220px;
+      overflow: hidden;
+      background: var(--sand-200);
+    }
+    .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover .gallery-photo img {
+      transform: scale(1.06);
+    }
+
+    .gallery-meta { padding: 16px; }
+    .gallery-meta h5 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .gallery-meta span {
+      font-size: 0.74rem;
+      color: var(--amber-flame);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 45px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--charcoal-500);
+    }
+    footer .footer-mark {
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+    footer a {
+      color: var(--charcoal-900);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    footer a:hover { color: var(--amber-flame); }
+
+    .mobile-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border-strong);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    }
+    .mobile-bar strong {
+      font-size: 0.88rem;
+      color: var(--charcoal-900);
+      display: block;
+    }
+    .mobile-wa-btn {
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.84rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    }
+
+    @media (max-width: 992px) {
+      .hero, .story-grid, .disciplines-grid { grid-template-columns: 1fr; gap: 40px; }
+      .workshop-grid, .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 3.4rem; }
+      .story-content h2, .section-title h3 { font-size: 2.6rem; }
+      .nav-menu a:not(.nav-cta) { display: none; }
+      .gallery-grid { padding: 0 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .workshop-grid, .gallery-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.7rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-stats { justify-content: space-between; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-notice">
+    Intimate Sessions Limited to <span>4–6 Crafters</span> • Flame Working & Hot Shop in KL
+  </div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand-group">
+        <div class="brand-mark">
+          <svg viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="unbreakableJuGrad" x1="10%" y1="5%" x2="95%" y2="95%">
+                <stop offset="0%" stop-color="#FFAB53" />
+                <stop offset="45%" stop-color="#E05A2B" />
+                <stop offset="100%" stop-color="#A82B09" />
+              </linearGradient>
+            </defs>
+            <path d="M 18 18 
+                     C 18 42, 24 60, 36 60 
+                     C 48 60, 54 44, 54 22 
+                     C 54 14, 48 14, 48 22 
+                     C 48 38, 44 48, 36 48 
+                     C 28 48, 25 36, 25 18 
+                     C 25 12, 18 12, 18 18 Z
+                     
+                     M 68 28
+                     C 68 22, 62 22, 62 28
+                     L 62 61
+                     C 62 73, 53 79, 44 79
+                     C 38 79, 36 75, 40 71
+                     C 43 68, 47 70, 51 68
+                     C 55 66, 56 61, 56 55
+                     L 56 28
+                     C 56 22, 68 22, 68 28 Z" 
+                  fill="url(#unbreakableJuGrad)" />
+            <circle cx="36" cy="31" r="5" fill="#FFB877" />
+            <circle cx="35" cy="30" r="2" fill="#FFFFFF" opacity="0.95" />
+            <circle cx="62" cy="14" r="4.2" fill="url(#unbreakableJuGrad)" />
+            <circle cx="61.2" cy="13.2" r="1.6" fill="#FFFFFF" opacity="0.9" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Unbreakable Ju</span>
+          <span class="brand-tag">Mindful Glasscraft Studio</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#about">Story</a>
+        <a href="#disciplines">Crafts</a>
+        <a href="#workshops">Workshops</a>
+        <a href="#gallery">Showcase</a>
+        <a href="https://wa.link/mnqdtu" target="_blank" class="nav-cta">WhatsApp Schedule</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <div class="hero-glow-fx"></div>
+      <div>
+        <div class="hero-eyebrow">Studio Workshops & Custom Glass Art</div>
+        <h1>Step out of the rush. Shape your own light.</h1>
+        <p>Experience the meditative focus of flame working and glass blowing. An intimate sanctuary to quiet your thoughts and turn molten glass into unique keepsakes.</p>
+        
+        <div class="hero-actions">
+          <a href="https://wa.link/mnqdtu" target="_blank" class="btn-primary">
+            Inquire via WhatsApp →
+          </a>
+          <a href="#workshops" class="btn-ghost">Explore Workshops</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span>4–6</span>
+            <span>Pax Max / Session</span>
+          </div>
+          <div class="stat-item">
+            <span>100%</span>
+            <span>All Gear Included</span>
+          </div>
+          <div class="stat-item">
+            <span>1-on-1</span>
+            <span>Artisan Mentorship</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual-wrap">
+        <div class="blob-frame">
+          <img src="https://i.ibb.co/xKM9qkxG/Picture2-2.png" data-fallback="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="Torch craft flame working molten glass rod">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="about" class="story-section">
+    <div class="container story-grid">
+      <div style="display: flex; justify-content: center;">
+        <div class="blob-frame" style="border-radius: 56% 44% 50% 50% / 50% 55% 45% 50%;">
+          <img src="https://i.ibb.co/SXdkk2vC/Img-JL.jpg" data-fallback="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Julia, Founder and Artisan of Unbreakable Studio">
+        </div>
+      </div>
+      <div class="story-content">
+        <span class="eyebrow">About Julia</span>
+        <h2>Finding Stillness in the Fire</h2>
+        <p>Glass requires total presence. You cannot rush molten light. Over years of mastering the craft, shaping fragile materials became Julia's emotional anchor, turning daily stress into deep, lasting calm.</p>
+        <div class="story-quote">
+          “You don’t force glass into shape—you listen to how it breathes under the flame.”
+        </div>
+        <p>She established Unbreakable Ju to share that quiet refuge. Step away from city distractions for a few mindful hours, unwind your thoughts, and shape your own piece of peace to take home.</p>
+        <div class="story-signature">— Julia, Founder & Artisan</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="disciplines" class="disciplines">
+      <div class="section-title">
+        <span>The Craftsmanship</span>
+        <h3>Two Ways to Experience the Fire</h3>
+      </div>
+      <div class="disciplines-grid">
+        <div class="discipline-card">
+          <div class="discipline-thumb">
+            <img src="https://i.ibb.co/6RM5wYPd/Picture1-1.png" data-fallback="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80" alt="Glass Blowing Hot Shop Furnace">
+          </div>
+          <span class="tag">Glass Blowing • Hot Shop</span>
+          <h4>Get Ready to Be Blown Away</h4>
+          <p>Glass blowing manipulates molten glass directly from a 1,100°C furnace. Learn pipe gathering, bubble formation, and shaping techniques to build your creative expression in a fully supervised, high-energy environment.</p>
+        </div>
+
+        <div class="discipline-card">
+          <div class="discipline-thumb">
+            <img src="https://i.ibb.co/xKM9qkxG/Picture2-2.png" data-fallback="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="Flame Working Gas Torch Studio">
+          </div>
+          <span class="tag">Flame Working • Bench Torch</span>
+          <h4>Get Fired Up for Flame Working</h4>
+          <p>At our flame working bench, gas torches melt and fuse colorful borosilicate glass rods. Create delicate miniature sculptures, custom glass charms, stirrers, and detailed ornaments with precise gravity manipulation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="workshops" class="workshops">
+      <div class="section-title">
+        <span>Curriculum & Pricing</span>
+        <h3>Seasonal Studio Sessions</h3>
+      </div>
+      <div class="workshop-grid">
+        <div class="workshop-card">
+          <div>
+            <div class="card-thumb">
+              <img src="https://i.ibb.co/1GD44Qkz/G4.jpg" alt="Weekend Relax Mind Handcraft">
+            </div>
+            <h4>Weekend Relax Mind Handcraft</h4>
+            <div class="price-wrap">
+              <div class="price">RM 250</div>
+              <div class="meta">3 hours • Single entry</div>
+            </div>
+            <ul>
+              <li>Beginner-friendly torch & kiln guidance</li>
+              <li>Craft drink stirrers, suncatchers, or pins</li>
+              <li>Protective gear & raw materials provided</li>
+            </ul>
+          </div>
+          <a href="https://wa.link/mnqdtu" target="_blank" class="btn-card">Inquire Slot</a>
+        </div>
+
+        <div class="workshop-card featured">
+          <span class="card-badge">Most Popular</span>
+          <div>
+            <div class="card-thumb">
+              <img src="https://i.ibb.co/zh0382qL/Picture5.png" data-fallback="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" alt="Glass Heart Sculptures for couples session">
+            </div>
+            <h4>Spark Workshop for Couples</h4>
+            <div class="price-wrap">
+              <div class="price">RM 500</div>
+              <div class="meta">3 hours • For 2 pax</div>
+            </div>
+            <ul>
+              <li>Private studio slot for two people</li>
+              <li>Craft matching keepsakes & personal tokens</li>
+              <li>Dedicated hands-on coaching with Julia</li>
+            </ul>
+          </div>
+          <a href="https://wa.link/mnqdtu" target="_blank" class="btn-card">Reserve Slot</a>
+        </div>
+
+        <div class="workshop-card">
+          <div>
+            <div class="card-thumb">
+              <img src="https://i.ibb.co/vxhmVn8S/Picture7.png" data-fallback="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Special Theme Glass Workshop">
+            </div>
+            <h4>Special Theme Workshops</h4>
+            <div class="price-wrap">
+              <div class="price">Seasonal</div>
+              <div class="meta">Valentine & Christmas Series</div>
+            </div>
+            <ul>
+              <li>Holiday festive tokens & thematic decor</li>
+              <li>Special seasonal color glass rods</li>
+              <li>Complimentary gift packaging included</li>
+            </ul>
+          </div>
+          <a href="https://wa.link/mnqdtu" target="_blank" class="btn-card">Check Themes</a>
+        </div>
+
+        <div class="workshop-card">
+          <div>
+            <div class="card-thumb">
+              <img src="https://i.ibb.co/6706GqnJ/G2.jpg" alt="Custom Glass Artwork Commission">
+            </div>
+            <h4>Custom Artwork Commission</h4>
+            <div class="price-wrap">
+              <div class="price">Quotation</div>
+              <div class="meta">Bespoke Glass Design</div>
+            </div>
+            <ul>
+              <li>Tailored miniatures, pendants, & awards</li>
+              <li>Estimated based on design complexity</li>
+              <li>Handmade directly by Julia</li>
+            </ul>
+          </div>
+          <a href="https://wa.link/mnqdtu" target="_blank" class="btn-card">Request Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <div class="section-title" style="margin-bottom: 36px;">
+        <span>Studio Creations</span>
+        <h3>Handmade Artwork Gallery</h3>
+      </div>
+      <div class="gallery-grid">
+        <!-- Gallery 1: G1 -->
+        <div class="gallery-item">
+          <div class="gallery-photo">
+            <img src="https://i.ibb.co/F4JQsFxF/G1.jpg" alt="Sculpted Glass Cocktails">
+          </div>
+          <div class="gallery-meta">
+            <h5>Sculpted Glass Cocktails</h5>
+            <span>Happy Hour Miniature Series</span>
+          </div>
+        </div>
+
+        <!-- Gallery 2: G3 -->
+        <div class="gallery-item">
+          <div class="gallery-photo">
+            <img src="https://i.ibb.co/B5G0Jy30/G3.jpg" alt="Miniature Sanctuary Series">
+          </div>
+          <div class="gallery-meta">
+            <h5>Miniature Sanctuary Series</h5>
+            <span>Silent Spires & Steeples</span>
+          </div>
+        </div>
+
+        <!-- Gallery 3: G5 -->
+        <div class="gallery-item">
+          <div class="gallery-photo">
+            <img src="https://i.ibb.co/P3mKKVV/G5.jpg" alt="Artisan Desktop Greenery">
+          </div>
+          <div class="gallery-meta">
+            <h5>Artisan Desktop Greenery</h5>
+            <span>Botanical Decor</span>
+          </div>
+        </div>
+
+        <!-- Gallery 4: G6 -->
+        <div class="gallery-item">
+          <div class="gallery-photo">
+            <img src="https://i.ibb.co/mrX5s1TW/G6.jpg" alt="Miniature Glass Keychain">
+          </div>
+          <div class="gallery-meta">
+            <h5>Miniature Glass Keychain</h5>
+            <span>Pocket Sculpture Series</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-mark">
+        <svg width="40" height="36" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 18 18 C 18 42, 24 60, 36 60 C 48 60, 54 44, 54 22 C 54 14, 48 14, 48 22 C 48 38, 44 48, 36 48 C 28 48, 25 36, 25 18 C 25 12, 18 12, 18 18 Z M 68 28 C 68 22, 62 22, 62 28 L 62 61 C 62 73, 53 79, 44 79 C 38 79, 36 75, 40 71 C 43 68, 47 70, 51 68 C 55 66, 56 61, 56 55 L 56 28 C 56 22, 68 22, 68 28 Z" fill="url(#unbreakableJuGrad)" />
+          <circle cx="36" cy="31" r="5" fill="#FFB877" />
+          <circle cx="35" cy="30" r="2" fill="#FFFFFF" opacity="0.95" />
+          <circle cx="62" cy="14" r="4.2" fill="url(#unbreakableJuGrad)" />
+          <circle cx="61.2" cy="13.2" r="1.6" fill="#FFFFFF" opacity="0.9" />
+        </svg>
+      </div>
+      <p><strong>Unbreakable Ju</strong> — Mindful Glasscraft Studio &copy; 2026</p>
+      <p style="margin-top: 6px;">Instagram: <a href="https://www.instagram.com/unbreakableju" target="_blank">@unbreakableju</a> &bull; Kuala Lumpur, Malaysia</p>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <div>
+      <strong>Next Workshop Schedule</strong>
+      <span style="font-size: 0.74rem; color: var(--amber-flame); display: block; font-weight: 500;">4–6 spots left per weekend</span>
+    </div>
+    <a href="https://wa.link/mnqdtu" target="_blank" class="mobile-wa-btn">
+      WhatsApp Now
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const images = document.querySelectorAll("img[data-fallback]");
+      images.forEach(img => {
+        img.onerror = function() {
+          if (this.dataset.fallback && this.src !== this.dataset.fallback) {
+            this.src = this.dataset.fallback;
+          }
+        };
+      });
+    });
+  </script>
+
+</body>
+</html>
